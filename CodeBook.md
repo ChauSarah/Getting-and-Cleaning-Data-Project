@@ -1,6 +1,6 @@
 ## Code Book
 
-This code book describes the variables, the data, and any transformations or work that was performed to clean up the data for this project
+This code book describes the variables, the data, and any transformations or work that was performed to clean up the data for this project.
 
 ### Source
 
@@ -24,8 +24,8 @@ The experiments were carried out with a group of 30 volunteers between 19-48 yea
 * `y_train.txt`: Activity label for each movement observation in `X_train.txt`.
 
 * `X_test.txt`: Data of movement features for volunteers in the testing set
-* `subject_test.txt`: Subject ID for each movement observation in `X_train.txt`.
-* `y_test.txt`: Activity label for each movement observation in `X_train.txt`.
+* `subject_test.txt`: Subject ID for each movement observation in `X_test.txt`.
+* `y_test.txt`: Activity label for each movement observation in `X_test.txt`.
 
 This analysis did not use the raw data in the "Inertial Signals" folders.
 
