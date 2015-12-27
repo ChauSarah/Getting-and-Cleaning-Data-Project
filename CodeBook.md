@@ -1,51 +1,38 @@
-CodeBook
+## Code Book
 
 This code book describes the variables, the data, and any transformations or work that was performed to clean up the data for this project
 
-
-Source
+### Source
 
 Original data: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 Original description of the dataset: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
+### Overview
 
-Overview
-
-The experiments were carried out with a group of 30 volunteers between 19-48 years of age. Each person performed different activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on their waist. Various parameters of their movements were captured.
-
-
-The dataset includes the following files:
-
-'README.txt'
-
-'features_info.txt': Description of all features
-
-'features.txt': List of all features
-
-'activity_labels.txt': Activity name and labels
-
-'train/X_train.txt': Training set
-
-'train/y_train.txt': Training labels
-
-'test/X_test.txt': Test set.
-
-'test/y_test.txt': Test labels.
+The experiments were carried out with a group of 30 volunteers between 19-48 years of age. Each person performed different activities (walking, walking upstairs, walking downstairs, sitting, standing, laying) while wearing a smartphone (Samsung Galaxy S II) on their waist. Various parameters of their movements were captured.
 
 
-Transformation details
+### The dataset includes the following files:
 
-Merges the training and the test sets to create one data set.
-Extracts only the measurements on the mean and standard deviation for each measurement.
-Uses descriptive activity names to name the activities in the data set
-Appropriately labels the data set with descriptive activity names.
-Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-How run_analysis.R implements the above steps:
+* `features.txt`: List of movement attributes
+* `features_info.txt`: Description of movement attributes recorded
+* `activity_labels.txt`: Names and labels of each activity type
 
-Require reshapre2 and data.table librareis.
-Load both test and train data
-Load the features and activity labels.
-Extract the mean and standard deviation column names and data.
-Process the data. There are two parts processing test and train data respectively.
-Merge data set.
+* `X_train.txt`: Data of movement features for volunteers in the training set
+* `subject_train.txt`: Subject ID for each movement observation in `X_train.txt`.
+* `y_train.txt`: Activity label for each movement observation in `X_train.txt`.
+
+* `X_test.txt`: Data of movement features for volunteers in the testing set
+* `subject_test.txt`: Subject ID for each movement observation in `X_train.txt`.
+* `y_test.txt`: Activity label for each movement observation in `X_train.txt`.
+
+This analysis did not use the raw data in the "Inertial Signals" folders.
+
+### Processing Steps
+
+1. Read and merged the subject, activity and feature files into a single dataframe
+2. Mean and standard deviation columns for each attribute were extracted
+3. Descriptive activity names were applied to the subsetted dataframe
+4. Created an independent data set with the average of each variable for each activity for all subjects
+5. Created output for tidy data set
